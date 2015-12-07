@@ -1,6 +1,9 @@
 MagicMirror
 ===========
 
+## THIS WAS INSPIRED BY (Completely ripped off)  http://michaelteeuw.nl/tagged/magicmirror 
+Head to his site for more projects!
+
 ##Introduction
 
 The super magic interface of my personal Magic Mirror. More information about this project can be found on my [blog](http://michaelteeuw.nl/tagged/magicmirror).
