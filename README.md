@@ -1,6 +1,8 @@
 MagicMirror
 ===========
 
+## BEN - test edit :-)
+
 ## THIS WAS INSPIRED BY (Completely ripped off)  http://michaelteeuw.nl/tagged/magicmirror 
 Head to his site for more projects!
 
