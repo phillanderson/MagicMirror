@@ -16,21 +16,48 @@
 	<div class="top left"><div class="date small dimmed"></div><div class="time"></div><div class="calendar xxsmall"></div></div>
 	<div class="top right"><div class="windsun small dimmed"></div><div class="temp"></div><div class="forecast small dimmed"></div></div>
 	<div class="center-ver center-hor"></div>
-	<div class="lower-third center-hor">
-		<!--<div class="compliment light">
-		</div> -->
+	<div class="lower-third center-hor"><div class="compliment light"></div>
 		
 		<div id="map" style="width:600px; height:600px;"></div>
 		
 		<script>
-function initMap() {
+		
+function initMap()
+{
+  var customMapType = new google.maps.StyledMapType([{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"administrative.land_parcel","elementType":"geometry.fill","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"lightness":"-100"},{"saturation":"-100"},{"gamma":"0.00"}]},{"featureType":"poi.business","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"poi.government","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"poi.medical","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"poi.sports_complex","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#000000"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#000000"},{"visibility":"on"}]}],
+	                                                 {
+		                                               	 name: 'Custom Style'
+	                                              	 });
+  var customMapTypeId = 'custom_style';
+	
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 13,
-    center: {lat: 51.4775299, lng: -2.5591715}
+    center: {lat: 51.4775299, lng: -2.5591715},
+    mapTypeControlOptions: { mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId] },
+    disableDefaultUI: true
   });
 
+  map.mapTypes.set(customMapTypeId, customMapType);
+  map.setMapTypeId(customMapTypeId);
+  
   var trafficLayer = new google.maps.TrafficLayer();
   trafficLayer.setMap(map);
+
+  var homemarker = new google.maps.Marker({
+	    position: {lat: 51.4619409, lng: -2.6026915},
+	    map: map,
+	    animation: google.maps.Animation.DROP,
+	    title: 'Home',
+	    label: 'H'
+	  });
+
+  var workmarker = new google.maps.Marker({
+	  	position: {lat: 51.5024714, lng: -2.5547415},
+	  	map: map,
+	  	animation: google.maps.Animation.DROP,
+	  	title: 'Work',
+		label: 'W'		  	
+	  });
 }
 
     </script>
