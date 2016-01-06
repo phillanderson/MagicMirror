@@ -37,6 +37,6 @@ var config = {
         maximumEntries: 10
     },
     news: {
-        feed: 'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'
+    	feed: 'http://feeds.bbci.co.uk/news/rss.xml?edition=uk'
     }
 }

@@ -16,10 +16,33 @@
 	<div class="top left"><div class="date small dimmed"></div><div class="time"></div><div class="calendar xxsmall"></div></div>
 	<div class="top right"><div class="windsun small dimmed"></div><div class="temp"></div><div class="forecast small dimmed"></div></div>
 	<div class="center-ver center-hor"></div>
-	<div class="lower-third center-hor"><div class="compliment light"></div></div>
+	<div class="lower-third center-hor">
+		<!--<div class="compliment light">
+		</div> -->
+		
+		<div id="map" style="width:600px; height:600px;"></div>
+		
+		<script>
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: 51.4775299, lng: -2.5591715}
+  });
+
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZHzo_XmB1Ewf06o7cesEWCQHmMkpQySc&callback=initMap&signed_in=true" async defer>
+    </script>
+		
+		
+	</div>
 	<div class="bottom center-hor"><div class="news medium"></div></div>
 
-</div>
+
+
 
 <script src="js/jquery.js"></script>
 <script src="js/jquery.feedToJSON.js"></script>
