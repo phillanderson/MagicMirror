@@ -61,7 +61,7 @@ function initMap()
 }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZHzo_XmB1Ewf06o7cesEWCQHmMkpQySc&callback=initMap&signed_in=true" async defer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=PHILLS_API_KEY&callback=initMap&signed_in=true" async defer>
     </script>
 		
 		
